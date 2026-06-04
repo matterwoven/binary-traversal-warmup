@@ -10,13 +10,10 @@ public class TraversalPractice {
      * @param node the root of the tree
      */
     public static void printNegativeNodesInOrder(TreeNode node) {
-        node == null? return
-
-        public void inOrder(TreeNode nodePoint){
-            inOrder(nodePoint.left);
-            Console.log.println
-            inOrder(nodePoint.right);
-        }
+        if(node == null) return;
+        printNegativeNodesInOrder(node.left);
+        if(node.data < 0) System.out.println(node.data);
+        printNegativeNodesInOrder(node.right);
     }
     
     /**
@@ -43,6 +40,14 @@ public class TraversalPractice {
      * @return the sum of the leaf node values
      */
     public static int sumLeafNodes(TreeNode node) {
-        return -1;
+        if(node == null) return 0;
+        int numAdded = 0;
+        if(node.left == null && node.right == null){
+            numAdded += node.data;
+            return numAdded;
+        }
+        numAdded += sumLeafNodes(node.left);
+        numAdded += sumLeafNodes(node.right);
+        return numAdded;
     }
 }
