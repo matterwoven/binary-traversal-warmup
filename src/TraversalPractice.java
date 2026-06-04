@@ -10,7 +10,13 @@ public class TraversalPractice {
      * @param node the root of the tree
      */
     public static void printNegativeNodesInOrder(TreeNode node) {
+        node == null? return
 
+        public void inOrder(TreeNode nodePoint){
+            inOrder(nodePoint.left);
+            Console.log.println
+            inOrder(nodePoint.right);
+        }
     }
     
     /**
